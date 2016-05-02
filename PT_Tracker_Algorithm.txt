@@ -1,0 +1,166 @@
+PT Tracker Algorithms
+
+This program is intended to help track my PT so I can measure and report my improvement
+
+Features:
+Time push-ups/situps
+Calculate reps/min during timed set
+Input variety of exercises
+Calculate calories burned by exercise per day
+Track weight
+Display graph of specific category since given date
+Display table for same thing
+
+
+*** Main Frame ***
+All frames centered on 1366 * 768 screen, 800 wide 500 high
+
+Title: PT TRACKER
+Text box at top of frame
+
+Four buttons
+
+Add
+Top left, goes to Add Workout
+
+History
+Top right, goes to History
+
+Time
+Bottom left, goes to Time
+
+Weight
+Bottom right, goes to Record Weight function
+
+One Edit box
+Weightval - right of Weight button
+
+
+*** Add Workout ***
+Render Main Frame invisible, create new
+
+Title: ADD WORKOUT
+Text box at top of frame
+
+5 Independant Radiobuttons on left side of frame
+Run
+Situps
+Pushups
+Swim
+Other
+
+Two text boxes
+Time - right in frame, below title
+To - below Time
+
+Three edit boxes
+Start - left of To, records start time of workout
+Stop - right of To, records stop time of workout
+Others - right of Other, records number of other workouts
+
+One Button
+Addsets - bottom right, goes to Add Sets. Goes to Name Workouts if Other is selected
+
+
+*** Name Workouts ***
+Render Add Workout invisible, create new
+
+Title: Name Workouts
+Text box at top of frame
+
+One edit box
+Name - left in frame, records name of workout
+
+One button
+Next - right in frame, adds Name string to list, 
+    string becomes Done when all workouts are named
+    callback changes to Add Sets
+
+
+*** Add Sets ***
+Render Add Workout and Name Workout invisible, create new
+
+Title: ADD SETS
+Text box at top of frame
+
+One List Box
+Workouts - Left in frame, contains each workout
+
+One text box
+Sets - Left of right half center line
+
+One edit box
+Setsnum - Right of Sets
+
+One Button
+Addreps - bottom right, goes to Add Reps.
+
+
+*** Add Reps ***
+Render Add Sets invisible, create new
+
+Title: Workout Name
+Text box at top of frame
+
+Setsnum string text boxes - left in frame, in a column
+Set 1
+Set 2
+Set 3
+...
+
+Setsnum string edit boxes - right of respective text boxes
+reps(1:sets) - records number of reps in each set
+
+One Button
+Done - Goes to Add Sets, goes to main frame when all exercises have sets/reps
+
+
+*** Time ***
+Render main frame invisible, create new
+
+Title: TIME
+Text box at top of frame
+
+Two Buttons
+Push_ups - Left in frame
+Sit_ups - Right in frame
+    Both go to Timer
+
+
+*** Timer ***
+Render Time invisible, create new
+
+Title: Exercise Name
+Text box at top of frame
+
+One Text Box
+Reps: - Bottom left in frame
+
+One Edit Box
+repcount - Right of Reps:
+
+Three Buttons
+Start - Left in frame, stamps user data with time
+Stop - Right in frame, stamps user data with time
+Done - Goes to main frame
+
+
+*** History ***
+Render main frame invisible, create new
+
+Title: HISTORY
+Text box at top of frame
+
+One Listbox
+Left in frame, lists categories
+
+One Text Box
+Since (DDMMMYY): Right of Listbox
+
+One Edit Box
+StTime - Right of Since
+
+Three Buttons
+Table - Below StTime, displays table for selected category
+Graph - Below Table, plots data for selected category
+Back - Bottom right, goes to main frame

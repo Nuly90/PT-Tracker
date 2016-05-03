@@ -205,3 +205,8 @@ graph = myButton(history, [.575,.4,.2,.1], 'Graph');
 
 % Back - Bottom right, goes to main frame
 back = myButton(history, [.75, .05, .2, .1], 'Back');
+
+% Set Button Callbacks
+set(Add, 'Callback', {@switchframe, main_frame, add_workout})
+set(Addsets, 'Callback', {@addsets, add_workout, name_workouts, add_sets,...
+    Run, Pushups, Situps, Swim, Other, Others, Next, workouts})

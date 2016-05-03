@@ -15,20 +15,22 @@ other = get(Other, 'Value');
 % If Other has been selected, go to name workout with the number of Others
 % encoded in the next button
 if other
-    set(Next, 'Userdata', get(Others, 'String'))
+    set(Next, 'Userdata', str2double(get(Others, 'String')))
     switchframe(1, 1, add_workout, name_workouts)
-end
-
-% Set the list box string in add sets and go to add sets
-workoutnames = {'Run', 'Pushups', 'Situps', 'Swim'};
-names = get(name_workouts, 'Userdata');
-for i = 1:4
-    if Workouts(i)
-        names = [names, workoutnames(i)];
+else
+    % Otherwise set the list box string in add sets and go to add sets
+    workoutnames = {'Run', 'Pushups', 'Situps', 'Swim'};
+    names = {};
+    for i = 1:4
+        if Workouts(i)
+            names = [names, workoutnames(i)];
+        end
+        
+        set(workouts, 'String', names)
+        switchframe(1, 1, add_workout, add_sets)
     end
-end
 
 set(workouts, 'String', names)
-switchframe(1, 1, add_workout, add_sets)
+end
 
 end

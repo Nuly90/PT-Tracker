@@ -1,5 +1,6 @@
 function addsets(hObject, Eventdata, add_workout, name_workouts, add_sets,...
-    Run, Pushups, Situps, Swim, Other, Others, Next, workouts)
+    Run, Pushups, Situps, Swim, Other, Others, Next, workouts, main_frame,...
+    Start, Stop)
 
 % This function goes to name workouts for each category indicated with
 % Other and Others, then modifies the list box in add sets to include all
@@ -32,5 +33,10 @@ else
 
 set(workouts, 'String', names)
 end
+
+% Save the start and stop time for the workout in main frame userdata
+start = get(Start, 'String');
+stop = get(Stop, 'String');
+set(main_frame, 'Userdata', {start, stop})
 
 end

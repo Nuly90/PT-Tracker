@@ -209,6 +209,8 @@ back = myButton(history, [.75, .05, .2, .1], 'Back');
 % Set Button Callbacks
 set(Add, 'Callback', {@switchframe, main_frame, add_workout})
 set(Addsets, 'Callback', {@addsets, add_workout, name_workouts, add_sets,...
-    Run, Pushups, Situps, Swim, Other, Others, Next, workouts})
+    Run, Pushups, Situps, Swim, Other, Others, Next, workouts, main_frame,...
+    Start, Stop})
 set(Next, 'Callback', {@addname, name_workouts, add_sets, Name, Run,...
     Pushups, Situps, Swim, workouts})
+set(Addreps, 'Callback', {@addreps, main_frame, add_sets, workouts, Setsnum})
